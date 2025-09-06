@@ -1,6 +1,14 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+// This code uses Clerk to protect specific routes.
+//  It defines protected routes (any route starting with /setting) and
+//    requires the user to be authenticated to access them.
+
+const isProtectedRoute = createRouteMatcher(["/setting(.*)"]);
+
+export default clerkMiddleware((auth, req) => {
+  if (isProtectedRoute(req)) auth.protect();
+});
 
 export const config = {
   matcher: [
