@@ -4,6 +4,14 @@ const nextConfig = {
     reactCompiler: true,
     ppr: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
