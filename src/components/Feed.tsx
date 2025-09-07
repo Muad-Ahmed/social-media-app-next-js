@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import Post from "./Post";
 
 const Feed = () => {
   return (
-    <div>Feed</div>
-  )
-}
+    <div>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </div>
+  );
+};
 
-export default Feed
+export default Feed;
